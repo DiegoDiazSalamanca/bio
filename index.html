@@ -7,7 +7,7 @@
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -36,11 +36,20 @@
 
     <!-- TOP SECTION: PURE SOLID WHITE -->
     <div class="bg-white w-full pt-10 pb-6 flex-shrink-0">
-        <div class="max-w-5xl mx-auto px-6">
+        <div class="max-w-5xl mx-auto px-6 relative">
+            
+            <!-- FRASE DE NEWTON EN LA ESQUINA SUPERIOR DERECHA (Oculta en móviles) -->
+            <div class="absolute top-0 right-6 hidden md:block text-right">
+                <p class="text-[13px] italic text-slate-500 max-w-xs leading-relaxed" style="font-family: 'Lora', serif;">
+                    "If I have seen further it is by standing on the shoulders of Giants."
+                </p>
+                <p class="text-[9px] text-slate-400 uppercase tracking-widest mt-1 font-sans">— Isaac Newton</p>
+            </div>
+
             <!-- Grid 2 Columns -->
-            <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10">
                 
-                <!-- Left Column: Photo -->
+                <!-- Left Column: Photo (Solo la foto) -->
                 <div class="flex flex-col items-center md:items-start">
                     <div class="w-36 h-36 rounded-full bg-slate-50 shadow-inner flex flex-shrink-0 items-center justify-center border-2 border-black overflow-hidden relative z-10">
                         <img src="https://media.licdn.com/dms/image/v2/D4D03AQH83qI9Nh-4Dg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720767587600?e=1792627200&v=beta&t=_qDwK9hCEjRRUe5SHvy_LOUpXF7u9Z-5A7ufbXPDJcg" alt="Diego Díaz-Salamanca" class="w-full h-full object-cover text-xs text-slate-400 text-center">
@@ -48,7 +57,15 @@
                 </div>
 
                 <!-- Right Column: Info -->
-                <div class="flex flex-col justify-center text-center md:text-left">
+                <div class="flex flex-col justify-center text-center md:text-left md:pt-2">
+                    <!-- FRASE DE NEWTON PARA MÓVILES (Centrada sobre el nombre) -->
+                    <div class="block md:hidden mb-4 text-center">
+                        <p class="text-[13px] italic text-slate-500 leading-relaxed" style="font-family: 'Lora', serif;">
+                            "If I have seen further it is by standing on the shoulders of Giants."
+                        </p>
+                        <p class="text-[9px] text-slate-400 uppercase tracking-widest mt-1 font-sans">— Isaac Newton</p>
+                    </div>
+
                     <h1 class="text-3xl md:text-4xl text-slate-800 mb-2">Diego Díaz-Salamanca</h1>
                     <p class="text-lg md:text-xl text-slate-600 font-semibold mb-1">BSc & MSc in Mechanical Engineering</p>
                     <p class="text-md text-slate-600 mb-1">PhD Candidate at University of Oviedo</p>
@@ -71,35 +88,37 @@
     <div class="relative w-full flex-shrink-0">
         <!-- Mitad superior: Blanco sólido con borde inferior negro -->
         <div class="absolute inset-0 h-1/2 bg-white border-b border-black"></div>
-        <!-- Mitad inferior: Verde brillante sólido -->
+        <!-- Mitad inferior: Azul sólido -->
         <div class="absolute top-1/2 bottom-0 w-full bg-[#5A85D7]"></div>
         
         <div class="relative max-w-5xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 items-center">
                 
-                <!-- Espaciador invisible para mantener la alineación -->
-                <div class="hidden md:block"></div>
+                <!-- COLUMNA IZQUIERDA: Botón "About Me" (Alineado bajo la foto) -->
+                <div class="w-full flex justify-center md:justify-start">
+                    <button onclick="showSection('content-about')" class="w-full md:w-36 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">About Me</button>
+                </div>
                 
-                <!-- Botones flotando -->
+                <!-- COLUMNA DERECHA: Los 5 Botones flotando -->
                 <div class="flex flex-col md:flex-row w-full gap-2 md:gap-3">
-                    <button onclick="showSection('content-about')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">About Me</button>
+                    <button onclick="showSection('content-background')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Academic Background</button>
                     
-                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Academic Background</button>
+                    <button onclick="showSection('content-courses')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Courses</button>
                     
-                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Courses</button>
-                    
-                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Conferences</button>
+                    <button onclick="showSection('content-conferences')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Conferences</button>
                     
                     <button onclick="showSection('content-publications')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Academic Publications</button>
+                    
+                    <button onclick="showSection('content-codes')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5A85D7] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Codes</button>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <!-- BOTTOM SECTION: SOLID BRIGHT GREEN (Elástica para rellenar el hueco) -->
+    <!-- BOTTOM SECTION: SOLID BLUE -->
     <div class="bg-[#5A85D7] w-full flex-1 md:min-h-0 pt-8 pb-8 flex flex-col">
-        <div class="max-w-5xl mx-auto px-6 w-full flex-1 md:min-h-0 grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10">
+        <div class="max-w-5xl mx-auto px-6 w-full flex-1 md:min-h-0 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10">
             
             <!-- Left Column: Social Links -->
             <div class="flex flex-col gap-6 w-full pl-2 items-center md:items-start pt-2">
@@ -117,26 +136,48 @@
                 </a>
             </div>
 
-            <!-- Right Column: Dynamic Content Box (Ocupa exactamente el 100% de su espacio) -->
-            <div class="relative w-full h-[500px] md:h-full">
+            <!-- Right Column: Dynamic Content Box -->
+            <div class="relative w-full h-[450px] md:h-full">
                 
-                <!-- SECTION 1: ABOUT ME -->
-                <!-- Mantenemos style="display: flex" para anular interferencias de CSS -->
+                <!-- SECTION: ABOUT ME (AHORA ESTÁ ABIERTA POR DEFECTO con style="display: flex;") -->
                 <div id="content-about" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: flex;">
-                    <h2 class="text-2xl mb-4 text-slate-800 font-bold flex-shrink-0">About me</h2>
-                    
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">About me</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
-                        <p class="text-slate-700 leading-relaxed mb-4">
+                        <!-- Añadido text-justify para alinear el texto de forma recta -->
+                        <p class="text-slate-700 leading-relaxed mb-4 text-justify">
                             Welcome to my personal page. I am a Mechanical Engineer currently pursuing my PhD at the University of Oviedo. As a member of the DyMaSt Research Group, my research is focused on [insert your main research topic here].
                         </p>
-                        <p class="text-slate-700 leading-relaxed">
+                        <p class="text-slate-700 leading-relaxed text-justify">
                             I am deeply passionate about engineering, continuous learning, and contributing to the scientific community. You can explore my academic trajectory using the buttons above, or connect with me through my social profiles on the left.
                         </p>
                     </div>
                 </div>
-				
-				
-                <!-- SECTION 2: ACADEMIC PUBLICATIONS -->
+
+                <!-- SECTION: ACADEMIC BACKGROUND (Placeholder) -->
+                <div id="content-background" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Background</h2>
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
+                        <p class="text-slate-500 italic">Content coming soon...</p>
+                    </div>
+                </div>
+                
+                <!-- SECTION: COURSES (Placeholder) -->
+                <div id="content-courses" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Courses</h2>
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
+                        <p class="text-slate-500 italic">Content coming soon...</p>
+                    </div>
+                </div>
+
+                <!-- SECTION: CONFERENCES (Placeholder) -->
+                <div id="content-conferences" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Conferences</h2>
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
+                        <p class="text-slate-500 italic">Content coming soon...</p>
+                    </div>
+                </div>
+                
+                <!-- SECTION: ACADEMIC PUBLICATIONS (AHORA OCULTA POR DEFECTO con style="display: none;") -->
                 <div id="content-publications" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
                     <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Publications</h2>
                     
@@ -153,9 +194,9 @@
                                         </div>
                                         <div class="flex-1">
                                             <p class="font-bold text-slate-800 text-lg leading-snug">Fatigue assessment of galvanized slotted bolted joints: Combined experimental and numerical analysis</p>
-                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Antonin Kanaval, Abilio M.P de Jesus, Iñigo Llavori, Pablo Suárez-Méndez, Miguel Muñiz-Calvente [Author 3]</p>
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Antonin Kanaval, Abilio M.P de Jesus, Iñigo Llavori, Pablo Suárez-Méndez, Miguel Muñiz-Calvente</p>
                                             <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> Journal of Constructional Steel Research, 248(2027) 11656.</p>
-											<a href="https://doi.org/10.1016/j.jcsr.2026.110656" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1016/j.jcsr.2026.110656 &rarr;</a>
+                                            <a href="https://doi.org/10.1016/j.jcsr.2026.110656" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1016/j.jcsr.2026.110656 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
@@ -173,91 +214,85 @@
                                         </div>
                                         <div class="flex-1">
                                             <p class="font-bold text-slate-800 text-lg leading-snug">Unitary phenomenological approach to the fatigue crack growth curve based on the analytical definition of the a - N curve</p>
-											<p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Enrique Castillo, Sergio Blasón, Miguel Muñiz-Calvente
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Enrique Castillo, Sergio Blasón, Miguel Muñiz-Calvente</p>
                                             <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> International Journal of Fatigue, 202(2026) 109207</p>
-											<a href="https://doi.org/10.1016/j.ijfatigue.2025.109207" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1016/j.ijfatigue.2025.109207 &rarr;</a>
+                                            <a href="https://doi.org/10.1016/j.ijfatigue.2025.109207" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1016/j.ijfatigue.2025.109207 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
-						
-                        <!-- AÑO 2025 -->
+                        <!-- AÑO 2024 -->
                         <div class="mb-8">
                             <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5A85D7] pl-3">2024</h3>
                             <ul class="space-y-6">
-                                <li class="pl-2">
+                                <li class="pl-2 mb-6">
                                     <div class="flex flex-col sm:flex-row gap-6 items-start">
                                         <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
                                             <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2452321624X00165-cov200h.gif" alt="Elsevier Logo" class="w-full h-auto object-contain">
                                         </div>
                                         <div class="flex-1">
                                             <p class="font-bold text-slate-800 text-lg leading-snug">Methodological advances in fatigue crack growth modeling</p>
-										    <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Enrique Castillo, Sergio Blasón, Miguel Muñiz-Calvente
-                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span>Procedia Structural Integrity, Volume 66, 2024, Pages 296-304</p>
-                                            <a href="https://doi.org/10.1016/j.prostr.2024.11.079" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1016/j.prostr.2024.11.079 &rarr;</a>
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Enrique Castillo, Sergio Blasón, Miguel Muñiz-Calvente</p>
+                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> Procedia Structural Integrity, Volume 66, 2024, Pages 296-304</p>
+                                            <a href="https://doi.org/10.1016/j.prostr.2024.11.079" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1016/j.prostr.2024.11.079 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
-                        </div
-							
-                        <!-- AÑO 2024 -->
-                        <div class="mb-8">
-                            <ul class="space-y-6">
-                                <li class="pl-2">
+
+                                <li class="pl-2 mb-6">
                                     <div class="flex flex-col sm:flex-row gap-6 items-start">
                                         <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
-                                            <img src="https://media.springernature.com/w158/springer-static/cover-hires/journal/170?as=webp" alt="Elsevier Logo" class="w-full h-auto object-contain">
+                                            <img src="https://media.springernature.com/w158/springer-static/cover-hires/journal/170?as=webp" alt="Springer Logo" class="w-full h-auto object-contain">
                                         </div>
                                         <div class="flex-1">
                                             <p class="font-bold text-slate-800 text-lg leading-snug">Influence of turning parameters on residual stresses and roughness of 42CrMo4 + QT</p>
-											<p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:<span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, </span> Miguel Muñiz-Calvente, Pejman Ebrahimzadeh, Iñigo Llavori, Alaitz Zabala, Pablo Pando, Carlos Suárez Álvarez, Inés Fernández-Pariente, Miren Larrañaga, Jan Papuga 
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Miguel Muñiz-Calvente, Pejman Ebrahimzadeh, Iñigo Llavori, Alaitz Zabala, Pablo Pando, Carlos Suárez Álvarez, Inés Fernández-Pariente, Miren Larrañaga, Jan Papuga</p>
                                             <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> The International Journal of Advanced Manufacturing Technology (2024) 134:2897–2919</p>
-                                            <a href="https://doi.org/10.1007/s00170-024-14257-5" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1007/s00170-024-14257-5 &rarr;</a>
+                                            <a href="https://doi.org/10.1007/s00170-024-14257-5" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1007/s00170-024-14257-5 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
 
-						<div class="mb-8">
-                            <ul class="space-y-6">
-                                <li class="pl-2">
+                                <li class="pl-2 mb-6">
                                     <div class="flex flex-col sm:flex-row gap-6 items-start">
                                         <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
                                             <img src="https://ars.els-cdn.com/content/image/X23523409.jpg" alt="Elsevier Logo" class="w-full h-auto object-contain">
                                         </div>
                                         <div class="flex-1">
                                             <p class="font-bold text-slate-800 text-lg leading-snug">Turning of 42CrMo4+QT under different scenarios: Dataset of machining, roughness and residual stress</p>
-											<p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:<span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, </span> Sofía Álvarez Álvarez, Miguel Muñiz-Calvente, Pejman Ebrahimzadeh, Iñigo Llavori, Alaitz Zabala, Pablo Pando, Carlos Suárez Álvarez, Inés Fernández-Pariente, Miren Larrañaga, Jan Papuga 
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Sofía Álvarez Álvarez, Miguel Muñiz-Calvente, Pejman Ebrahimzadeh, Iñigo Llavori, Alaitz Zabala, Pablo Pando, Carlos Suárez Álvarez, Inés Fernández-Pariente, Miren Larrañaga, Jan Papuga</p>
                                             <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> Data in Brief 56(2024) 110793</p>
-                                            <a href="https://doi.org/10.1016/j.dib.2024.110793" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1016/j.dib.2024.110793 &rarr;</a>
+                                            <a href="https://doi.org/10.1016/j.dib.2024.110793" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1016/j.dib.2024.110793 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
-                        </div>
 
-						<div class="mb-8">
-                            <ul class="space-y-6">
                                 <li class="pl-2">
                                     <div class="flex flex-col sm:flex-row gap-6 items-start">
                                         <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
                                             <img src="https://ars.els-cdn.com/content/image/X01678442.jpg" alt="Elsevier Logo" class="w-full h-auto object-contain">
                                         </div>
                                         <div class="flex-1">
-                                            <p class="font-bold text-slate-800 text-lg leading-snug">Advances in low cycle fatigue probabilisitc modeling</p>
-											<p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, Enrique Castillo, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, </span> Miguel Muñiz-Calvente, 
-                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span>Theoretical and Applied Fracture Mechanics, 133 (2024) 104611</p>
-                                            <a href="https://doi.org/10.1016/j.tafmec.2024.104611" target="_blank" class="text-xs font-bold text-blue-600 hover:text-black hover:underline mt-2 inline-block">DOI: 10.1016/j.tafmec.2024.104611 &rarr;</a>
+                                            <p class="font-bold text-slate-800 text-lg leading-snug">Advances in low cycle fatigue probabilistic modeling</p>
+                                            <p class="text-sm text-slate-600 mt-1"><span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, Enrique Castillo, <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca</span>, Miguel Muñiz-Calvente</p>
+                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> Theoretical and Applied Fracture Mechanics, 133 (2024) 104611</p>
+                                            <a href="https://doi.org/10.1016/j.tafmec.2024.104611" target="_blank" class="text-xs font-bold text-blue-600 hover:text-[#5A85D7] hover:underline mt-2 inline-block transition-colors">DOI: 10.1016/j.tafmec.2024.104611 &rarr;</a>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
+                    </div>
+                </div>
+
+                <!-- SECTION: CODES (Placeholder) -->
+                <div id="content-codes" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Codes</h2>
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
+                        <p class="text-slate-500 italic">Content coming soon...</p>
                     </div>
                 </div>
 
@@ -274,10 +309,14 @@
     <!-- SCRIPT INFALIBLE PARA CAMBIAR ENTRE SECCIONES -->
     <script>
         function showSection(sectionId) {
-            // Se usa style.display directo para evitar parpadeos y recalculaciones de Tailwind
-            document.getElementById('content-about').style.display = 'none';
-            document.getElementById('content-publications').style.display = 'none';
+            // Se usa array para poder ocultar todas las secciones de forma limpia
+            const sections = ['content-about', 'content-background', 'content-courses', 'content-conferences', 'content-publications', 'content-codes'];
             
+            sections.forEach(id => {
+                document.getElementById(id).style.display = 'none';
+            });
+            
+            // Muestra solo la que se ha clicado
             document.getElementById(sectionId).style.display = 'flex';
         }
     </script>
