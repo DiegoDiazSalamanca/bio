@@ -3,52 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Biografía</title>
+    <title>Diego Díaz-Salamanca - Bio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .tarjeta-bio {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            max-width: 400px;
-        }
-        h1 { margin-bottom: 5px; }
-        .profesion { opacity: 0.8; font-style: italic; margin-bottom: 20px; }
-        .links a {
-            display: block;
-            background: white;
-            color: #764ba2;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .links a:hover { transform: scale(1.05); }
+        body { font-family: 'Nunito', sans-serif; }
+        h1, h2 { font-family: 'Lora', serif; }
     </style>
 </head>
-<body>
-    <div class="tarjeta-bio">
-        <h1>Tu Nombre</h1>
-        <p class="profesion">Desarrollador / Creador</p>
-        <p>¡Bienvenido a mi rincón en internet! Aquí puedes encontrar mis redes y proyectos.</p>
-        <div class="links">
-            <a href="https://instagram.com">Instagram</a>
-            <a href="https://linkedin.com">LinkedIn</a>
+<body class="bg-gradient-to-br from-sky-100 to-emerald-100 min-h-screen flex flex-col justify-between text-slate-700">
+
+    <!-- Contenido principal -->
+    <main class="max-w-4xl mx-auto px-6 py-16 flex-grow flex flex-col justify-center">
+        
+        <!-- Perfil (Foto a la izquierda, texto a la derecha) -->
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
+            <!-- Foto de perfil (marcador de posición) -->
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/50 shadow-inner flex items-center justify-center flex-shrink-0 border-2 border-white/60">
+                <span class="text-slate-400 text-sm">Tu Foto Aquí</span>
+            </div>
+            
+            <!-- Información personal -->
+            <div class="text-center md:text-left flex flex-col justify-center h-full pt-2">
+                <h1 class="text-3xl md:text-4xl text-slate-800 mb-2">Diego Díaz-Salamanca</h1>
+                <p class="text-lg md:text-xl text-slate-600 font-semibold mb-1">Mechanical Engineer</p>
+                <p class="text-md text-slate-600 mb-1">PhD Candidate at University of Oviedo</p>
+                <p class="text-md text-emerald-700/80 italic">DyMaSt Research Group</p>
+            </div>
         </div>
-    </div>
+
+        <!-- Botones en horizontal -->
+        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="#" class="px-6 py-2 bg-white/60 hover:bg-white/90 text-slate-700 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs font-bold tracking-wider uppercase">About me</a>
+            <a href="#" class="px-6 py-2 bg-white/60 hover:bg-white/90 text-slate-700 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs font-bold tracking-wider uppercase">Academic Background</a>
+            <a href="#" class="px-6 py-2 bg-white/60 hover:bg-white/90 text-slate-700 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs font-bold tracking-wider uppercase">Courses</a>
+            <a href="#" class="px-6 py-2 bg-white/60 hover:bg-white/90 text-slate-700 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs font-bold tracking-wider uppercase">Conferences</a>
+            <a href="#" class="px-6 py-2 bg-white/60 hover:bg-white/90 text-slate-700 rounded-full shadow-sm hover:shadow-md transition-all duration-300 text-xs font-bold tracking-wider uppercase">Academic Publications</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 text-sm text-slate-500/80">
+        <p>&copy; 2026 Diego Díaz-Salamanca</p>
+    </footer>
+
 </body>
 </html>
