@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Biografía</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tarjeta-bio {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+        }
+        h1 { margin-bottom: 5px; }
+        .profesion { opacity: 0.8; font-style: italic; margin-bottom: 20px; }
+        .links a {
+            display: block;
+            background: white;
+            color: #764ba2;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .links a:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+    <div class="tarjeta-bio">
+        <h1>Tu Nombre</h1>
+        <p class="profesion">Desarrollador / Creador</p>
+        <p>¡Bienvenido a mi rincón en internet! Aquí puedes encontrar mis redes y proyectos.</p>
+        <div class="links">
+            <a href="https://instagram.com">Instagram</a>
+            <a href="https://linkedin.com">LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>
