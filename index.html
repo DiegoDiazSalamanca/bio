@@ -12,13 +12,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Nunito', sans-serif; }
-        h1, h2 { font-family: 'Lora', serif; }
+        h1, h2, h3 { font-family: 'Lora', serif; }
+        
+        /* DISEÑO PERSONALIZADO PARA LA BARRA DE DESPLAZAMIENTO (SCROLL) INTERNA */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8fafc; 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
     </style>
 </head>
-<body class="min-h-screen flex flex-col text-slate-700 bg-sky-100">
+<!-- BLOQUEO TOTAL DE PANTALLA: md:h-screen md:overflow-hidden anula la barra general -->
+<body class="min-h-screen md:h-screen md:overflow-hidden flex flex-col text-slate-700 bg-[#5df25d]">
 
     <!-- TOP SECTION: PURE SOLID WHITE -->
-    <div class="bg-white w-full pt-16 pb-8">
+    <div class="bg-white w-full pt-10 pb-6 flex-shrink-0">
         <div class="max-w-5xl mx-auto px-6">
             <!-- Grid 2 Columns -->
             <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10">
@@ -26,7 +43,6 @@
                 <!-- Left Column: Photo -->
                 <div class="flex flex-col items-center md:items-start">
                     <div class="w-36 h-36 rounded-full bg-slate-50 shadow-inner flex flex-shrink-0 items-center justify-center border-2 border-black overflow-hidden relative z-10">
-                        <!-- Tu foto de LinkedIn incrustada -->
                         <img src="https://media.licdn.com/dms/image/v2/D4D03AQH83qI9Nh-4Dg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720767587600?e=1792627200&v=beta&t=_qDwK9hCEjRRUe5SHvy_LOUpXF7u9Z-5A7ufbXPDJcg" alt="Diego Díaz-Salamanca" class="w-full h-full object-cover text-xs text-slate-400 text-center">
                     </div>
                 </div>
@@ -36,7 +52,15 @@
                     <h1 class="text-3xl md:text-4xl text-slate-800 mb-2">Diego Díaz-Salamanca</h1>
                     <p class="text-lg md:text-xl text-slate-600 font-semibold mb-1">BSc & MSc in Mechanical Engineering</p>
                     <p class="text-md text-slate-600 mb-1">PhD Candidate at University of Oviedo</p>
-                    <p class="text-md text-sky-700 font-medium italic">DyMaSt Research Group</p>
+                    <p class="text-md text-slate-600 mb-1 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-envelope text-slate-400"></i>
+                        <a href="mailto:diazsdiego@uniovi.es" class="hover:text-black transition-colors">diazsdiego@uniovi.es</a>
+                    </p>
+                    <p class="text-md font-medium italic mt-1">
+                        <a href="https://dymast.grupos.uniovi.es/presentacion" target="_blank" class="text-black hover:text-slate-700 underline underline-offset-4 decoration-black/40 hover:decoration-slate-700 transition-colors">
+                            DyMaSt Research Group
+                        </a>
+                    </p>
                 </div>
 
             </div>
@@ -44,11 +68,11 @@
     </div>
 
     <!-- MIDDLE SECTION: THE SOLID SPLIT BORDER WITH BLACK LINE -->
-    <div class="relative w-full">
+    <div class="relative w-full flex-shrink-0">
         <!-- Mitad superior: Blanco sólido con borde inferior negro -->
         <div class="absolute inset-0 h-1/2 bg-white border-b border-black"></div>
-        <!-- Mitad inferior: Azul claro sólido -->
-        <div class="absolute top-1/2 bottom-0 w-full bg-sky-100"></div>
+        <!-- Mitad inferior: Verde brillante sólido -->
+        <div class="absolute top-1/2 bottom-0 w-full bg-[#5df25d]"></div>
         
         <div class="relative max-w-5xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10 items-center">
@@ -56,44 +80,52 @@
                 <!-- Espaciador invisible para mantener la alineación -->
                 <div class="hidden md:block"></div>
                 
-                <!-- Botones flotando en el corte con bordes negros -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="#" class="px-5 py-2.5 bg-white text-slate-700 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.15)] hover:text-sky-700 hover:border-sky-700 transition-all duration-300 text-xs font-bold tracking-wider uppercase">Academic Background</a>
-                    <a href="#" class="px-5 py-2.5 bg-white text-slate-700 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.15)] hover:text-sky-700 hover:border-sky-700 transition-all duration-300 text-xs font-bold tracking-wider uppercase">Courses</a>
-                    <a href="#" class="px-5 py-2.5 bg-white text-slate-700 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.15)] hover:text-sky-700 hover:border-sky-700 transition-all duration-300 text-xs font-bold tracking-wider uppercase">Conferences</a>
-                    <a href="#" class="px-5 py-2.5 bg-white text-slate-700 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.15)] hover:text-sky-700 hover:border-sky-700 transition-all duration-300 text-xs font-bold tracking-wider uppercase">Academic Publications</a>
+                <!-- Botones flotando -->
+                <div class="flex flex-col md:flex-row w-full gap-2 md:gap-3">
+                    <button onclick="showSection('content-about')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5df25d] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">About Me</button>
+                    
+                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5df25d] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Academic Background</button>
+                    
+                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5df25d] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Courses</button>
+                    
+                    <button class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5df25d] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Conferences</button>
+                    
+                    <button onclick="showSection('content-publications')" class="flex-1 px-2 py-2.5 bg-white text-slate-800 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.06)] border border-black hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] hover:bg-[#5df25d] hover:text-black transition-all duration-300 text-[11px] lg:text-xs font-bold tracking-wider uppercase cursor-pointer flex items-center justify-center text-center leading-tight">Academic Publications</button>
                 </div>
 
             </div>
         </div>
     </div>
 
-    <!-- BOTTOM SECTION: SOLID LIGHT BLUE -->
-    <div class="bg-sky-100 w-full flex-grow pt-8 pb-16">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10">
-                
-                <!-- Left Column: Social Links -->
-                <div class="flex flex-col gap-6 w-full pl-2 items-center md:items-start pt-2">
-                    <a href="#" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-sky-700 transition-colors">
-                        <i class="fab fa-researchgate text-2xl w-6 text-center"></i>
-                        <span class="text-sm font-semibold">ResearchGate</span>
-                    </a>
-                    <a href="#" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-sky-700 transition-colors">
-                        <i class="fas fa-graduation-cap text-xl w-6 text-center"></i>
-                        <span class="text-sm font-semibold">Google Scholar</span>
-                    </a>
-                    <a href="#" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-sky-700 transition-colors">
-                        <i class="fab fa-linkedin text-2xl w-6 text-center"></i>
-                        <span class="text-sm font-semibold">LinkedIn</span>
-                    </a>
-                </div>
+    <!-- BOTTOM SECTION: SOLID BRIGHT GREEN (Elástica para rellenar el hueco) -->
+    <div class="bg-[#5df25d] w-full flex-1 md:min-h-0 pt-8 pb-8 flex flex-col">
+        <div class="max-w-5xl mx-auto px-6 w-full flex-1 md:min-h-0 grid grid-cols-1 md:grid-cols-[160px_1fr] gap-10">
+            
+            <!-- Left Column: Social Links -->
+            <div class="flex flex-col gap-6 w-full pl-2 items-center md:items-start pt-2">
+                <a href="https://www.researchgate.net/profile/Diego-Diaz-Salamanca-2" target="_blank" class="flex items-center gap-4 text-slate-800 hover:text-black transition-colors">
+                    <i class="fab fa-researchgate text-2xl w-6 text-center"></i>
+                    <span class="text-sm font-semibold">ResearchGate</span>
+                </a>
+                <a href="#" target="_blank" class="flex items-center gap-4 text-slate-800 hover:text-black transition-colors">
+                    <i class="fas fa-graduation-cap text-xl w-6 text-center"></i>
+                    <span class="text-sm font-semibold">Google Scholar</span>
+                </a>
+                <a href="https://www.linkedin.com/in/diego-d%C3%ADaz-salamanca-11322817b/" target="_blank" class="flex items-center gap-4 text-slate-800 hover:text-black transition-colors">
+                    <i class="fab fa-linkedin text-2xl w-6 text-center"></i>
+                    <span class="text-sm font-semibold">LinkedIn</span>
+                </a>
+            </div>
 
-                <!-- Right Column: About Me Box -->
-                <div>
-                    <!-- También le he puesto borde negro a la caja de "About me" para que vaya a juego -->
-                    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-black relative z-10">
-                        <h2 class="text-2xl mb-4 text-slate-800 font-bold">About me</h2>
+            <!-- Right Column: Dynamic Content Box (Ocupa exactamente el 100% de su espacio) -->
+            <div class="relative w-full h-[500px] md:h-full">
+                
+                <!-- SECTION 1: ABOUT ME -->
+                <!-- Mantenemos style="display: flex" para anular interferencias de CSS -->
+                <div id="content-about" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: flex;">
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold flex-shrink-0">About me</h2>
+                    
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-700 leading-relaxed mb-4">
                             Welcome to my personal page. I am a Mechanical Engineer currently pursuing my PhD at the University of Oviedo. As a member of the DyMaSt Research Group, my research is focused on [insert your main research topic here].
                         </p>
@@ -103,14 +135,96 @@
                     </div>
                 </div>
 
+                <!-- SECTION 2: ACADEMIC PUBLICATIONS -->
+                <div id="content-publications" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
+                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Publications</h2>
+                    
+                    <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
+                        
+                        <!-- AÑO 2026 -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5df25d] pl-3">2026</h3>
+                            <ul class="space-y-6">
+                                <li class="pl-2">
+                                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                                        <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
+                                            <img src="https://ars.els-cdn.com/content/image/X0143974X.jpg" alt="Elsevier Logo" class="w-full h-auto object-contain">
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-bold text-slate-800 text-lg leading-snug">Fatigue assessment of galvanized slotted bolted joints: Combined experimental and numerical analysis</p>
+                                            <p class="text-sm text-slate-700 mt-1"><span class="font-semibold">Authors:</span> Diego Díaz-Salamanca, Antonin Kanaval, [Author 3]</p>
+                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> Journal of Constructional Steel Research, Vol. [X], pp. [XX-XX].</p>
+                                            <a href="#" target="_blank" class="text-xs font-bold text-slate-500 hover:text-black hover:underline mt-2 inline-block">DOI / See article &rarr;</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- AÑO 2025 -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5df25d] pl-3">2025</h3>
+                            <ul class="space-y-6">
+                                <li class="pl-2">
+                                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                                        <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
+                                            <img src="https://ars.els-cdn.com/content/image/X01421123.jpg" alt="Elsevier Logo" class="w-full h-auto object-contain">
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-bold text-slate-800 text-lg leading-snug">Unitary phenomenological approach to the fatigue crack growth curve based on the analytical definition of the a - N curve</p>
+											<p class="text-sm text-slate-700 mt-1">
+												<span class="font-semibold">Authors:</span> Alfonso Fernández-Canteli, Diego Díaz-Salamanca, Enrique Castillo, Sergio Blasón, Miguel Muñiz-Calvente <span class="font-bold underline text-slate-900 underline-offset-2">Diego Díaz-Salamanca,
+
+                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> International Journal of Fatigue, Vol. [X], pp. [XX-XX].</p>
+                                            <a href="#" target="_blank" class="text-xs font-bold text-slate-500 hover:text-black hover:underline mt-2 inline-block">DOI / See article &rarr;</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- AÑO 2024 -->
+                        <div class="mb-8">
+                            <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5df25d] pl-3">2024</h3>
+                            <ul class="space-y-6">
+                                <li class="pl-2">
+                                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                                        <div class="flex-shrink-0 w-24 sm:w-32 flex items-start pt-1">
+                                            <img src="https://media.springernature.com/w158/springer-static/cover-hires/journal/170?as=webp" alt="Elsevier Logo" class="w-full h-auto object-contain">
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-bold text-slate-800 text-lg leading-snug">Influence of turning parameters on residual stresses and roughness of 42CrMo4 + QT</p>
+                                            <p class="text-sm text-slate-700 mt-1"><span class="font-semibold">Authors:</span> Diego Díaz-Salamanca</p>
+                                            <p class="text-sm text-slate-600 italic mt-0.5"><span class="font-semibold not-italic">Journal:</span> The International Journal of Advanced Manufacturing Technology</p>
+                                            <a href="#" target="_blank" class="text-xs font-bold text-slate-500 hover:text-black hover:underline mt-2 inline-block">DOI / See article &rarr;</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
 
-    <!-- FOOTER: SOLID LIGHT BLUE -->
-    <footer class="bg-sky-100 text-center py-6 text-sm text-slate-500/80 w-full border-t border-black/20">
+    <!-- FOOTER -->
+    <footer class="bg-[#5df25d] text-center py-4 text-sm text-slate-800 w-full border-t border-black/20 flex-shrink-0">
         <p>&copy; 2026 Diego Díaz-Salamanca. All rights reserved.</p>
     </footer>
 
+    <!-- SCRIPT INFALIBLE PARA CAMBIAR ENTRE SECCIONES -->
+    <script>
+        function showSection(sectionId) {
+            // Se usa style.display directo para evitar parpadeos y recalculaciones de Tailwind
+            document.getElementById('content-about').style.display = 'none';
+            document.getElementById('content-publications').style.display = 'none';
+            
+            document.getElementById(sectionId).style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
