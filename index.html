@@ -61,7 +61,7 @@
                     <!-- FRASE DE NEWTON PARA MÓVILES (Centrada sobre el nombre) -->
                     <div class="block md:hidden mb-4 text-center">
                         <p class="text-[13px] italic text-slate-500 leading-relaxed" style="font-family: 'Lora', serif;">
-                            "If I have seen further it is by standing on the shoulders of Giants."
+                            "If I have seen further it is by standing on the shoulders of giants."
                         </p>
                         <p class="text-[9px] text-slate-400 uppercase tracking-widest mt-1 font-sans">— Isaac Newton</p>
                     </div>
@@ -117,11 +117,13 @@
     </div>
 
     <!-- BOTTOM SECTION: SOLID BLUE -->
-    <div class="bg-[#5A85D7] w-full flex-1 md:min-h-0 pt-8 pb-8 flex flex-col">
-        <div class="max-w-5xl mx-auto px-6 w-full flex-1 md:min-h-0 grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-10">
+    <!-- Se retira flex-1 del contenedor principal de la grid para evitar que estire las cajas infinitamente -->
+    <div class="bg-[#5A85D7] w-full flex-1 pt-8 pb-8 flex flex-col justify-start">
+        <!-- MD:H-[520px] ESTABLECE UNA ALTURA FIJA Y PERFECTA PARA LAS CAJAS BLANCAS -->
+        <div class="max-w-5xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-10 md:h-[520px]">
             
             <!-- LEFT COLUMN: Social Links + News Box -->
-            <div class="flex flex-col gap-5 w-full items-center md:items-start pt-2 h-full md:max-h-full">
+            <div class="flex flex-col gap-5 w-full items-center md:items-start pt-2 h-full">
                 
                 <!-- Social Links -->
                 <div class="flex flex-row md:flex-col gap-4 md:gap-6 w-full justify-center md:justify-start md:pl-2 flex-shrink-0 flex-wrap">
@@ -139,40 +141,36 @@
                     </a>
                 </div>
 
-                <!-- NUEVA SECCIÓN: NEWS! -->
-                <div class="w-full bg-white rounded-2xl shadow-lg border border-black flex flex-col flex-1 min-h-[200px] overflow-hidden mt-2">
+                <!-- SECCIÓN: NEWS! -->
+                <div class="w-full bg-white rounded-2xl shadow-lg border border-black flex flex-col flex-1 min-h-[200px] overflow-hidden md:mt-2">
                     <!-- Cabecera de News -->
                     <div class="bg-slate-50 border-b border-slate-200 py-2.5 px-4 flex-shrink-0 flex items-center">
                         <i class="fas fa-bullhorn text-[#5A85D7] mr-2 text-sm"></i>
                         <h3 class="text-sm font-bold text-slate-800 tracking-wide">News!</h3>
                     </div>
-                    
                     <!-- Contenedor scrollable de noticias -->
                     <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
-                        
-                        <!-- Noticia 1 (Ejemplo) -->
+                        <!-- Noticia 1 -->
                         <div class="border-l-2 border-[#5A85D7] pl-3">
                             <p class="text-[10px] font-bold text-[#5A85D7] uppercase tracking-wider">Oct 2026</p>
                             <p class="text-xs text-slate-700 mt-0.5 leading-snug">Launched my interactive academic portfolio.</p>
                         </div>
-
-                        <!-- Noticia 2 (Ejemplo) -->
+                        <!-- Noticia 2 -->
                         <div class="border-l-2 border-[#5A85D7] pl-3">
                             <p class="text-[10px] font-bold text-[#5A85D7] uppercase tracking-wider">Sep 2026</p>
                             <p class="text-xs text-slate-700 mt-0.5 leading-snug">New paper on fatigue assessment published in JCSR.</p>
                         </div>
-
                     </div>
                 </div>
 
             </div>
 
-            <!-- RIGHT COLUMN: Dynamic Content Box -->
+            <!-- RIGHT COLUMN: Dynamic Content Box (Hereda la altura fija de 520px) -->
             <div class="relative w-full h-[450px] md:h-full">
                 
                 <!-- SECTION: ABOUT ME (Abierta por defecto) -->
                 <div id="content-about" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: flex;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">About me</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">About me</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-700 leading-relaxed mb-4 text-justify">
                             Welcome to my personal page. I am a Mechanical Engineer currently pursuing my PhD at the University of Oviedo. As a member of the DyMaSt Research Group, my research is focused on [insert your main research topic here].
@@ -183,25 +181,25 @@
                     </div>
                 </div>
 
-                <!-- SECTION: ACADEMIC BACKGROUND (Placeholder) -->
+                <!-- SECTION: ACADEMIC BACKGROUND -->
                 <div id="content-background" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Background</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Background</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-500 italic">Content coming soon...</p>
                     </div>
                 </div>
                 
-                <!-- SECTION: COURSES (Placeholder) -->
+                <!-- SECTION: COURSES -->
                 <div id="content-courses" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Courses</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Courses</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-500 italic">Content coming soon...</p>
                     </div>
                 </div>
 
-                <!-- SECTION: CONFERENCES (Placeholder) -->
+                <!-- SECTION: CONFERENCES -->
                 <div id="content-conferences" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Conferences</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Conferences</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-500 italic">Content coming soon...</p>
                     </div>
@@ -209,7 +207,7 @@
                 
                 <!-- SECTION: ACADEMIC PUBLICATIONS -->
                 <div id="content-publications" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Publications</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Academic Publications</h2>
                     
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         
@@ -253,8 +251,8 @@
                             </ul>
                         </div>
 
-                        <!-- AÑO 2024 -->
-                        <div class="mb-8">
+                        <!-- AÑO 2024 (Se quita el mb-8 extra para eliminar el doble hueco blanco al final del scroll) -->
+                        <div>
                             <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5A85D7] pl-3">2024</h3>
                             <ul class="space-y-6">
                                 <li class="pl-2 mb-6">
@@ -320,7 +318,7 @@
 
                 <!-- SECTION: CODES (Placeholder) -->
                 <div id="content-codes" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: none;">
-                    <h2 class="text-2xl mb-6 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Codes</h2>
+                    <h2 class="text-2xl mb-4 text-slate-800 font-bold border-b border-slate-200 pb-2 flex-shrink-0">Codes</h2>
                     <div class="flex-1 overflow-y-auto custom-scrollbar pr-4">
                         <p class="text-slate-500 italic">Content coming soon...</p>
                     </div>
