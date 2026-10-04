@@ -35,7 +35,7 @@
 <body class="min-h-screen md:h-screen md:overflow-hidden flex flex-col text-slate-700 bg-[#5A85D7]">
 
     <!-- TOP SECTION: PURE SOLID WHITE -->
-    <div class="bg-white w-full pt-10 pb-6 flex-shrink-0">
+    <div class="bg-white w-full pt-8 pb-5 flex-shrink-0">
         <div class="max-w-5xl mx-auto px-6 relative">
             
             <!-- FRASE DE NEWTON EN LA ESQUINA SUPERIOR DERECHA (Oculta en móviles) -->
@@ -61,7 +61,7 @@
                     <!-- FRASE DE NEWTON PARA MÓVILES (Centrada sobre el nombre) -->
                     <div class="block md:hidden mb-4 text-center">
                         <p class="text-[13px] italic text-slate-500 leading-relaxed" style="font-family: 'Lora', serif;">
-                            "If I have seen further it is by standing on the shoulders of giants."
+                            "If I have seen further it is by standing on the shoulders of Giants."
                         </p>
                         <p class="text-[9px] text-slate-400 uppercase tracking-widest mt-1 font-sans">— Isaac Newton</p>
                     </div>
@@ -117,16 +117,16 @@
     </div>
 
     <!-- BOTTOM SECTION: SOLID BLUE -->
-    <!-- Se retira flex-1 del contenedor principal de la grid para evitar que estire las cajas infinitamente -->
-    <div class="bg-[#5A85D7] w-full flex-1 pt-8 pb-8 flex flex-col justify-start">
-        <!-- MD:H-[520px] ESTABLECE UNA ALTURA FIJA Y PERFECTA PARA LAS CAJAS BLANCAS -->
-        <div class="max-w-5xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-10 md:h-[520px]">
+    <!-- flex-1 min-h-0 asegura que ocupa SOLO el espacio que queda antes del copyright -->
+    <div class="bg-[#5A85D7] w-full flex-1 pt-6 pb-6 flex flex-col min-h-0">
+        <!-- max-h-[420px] limita la altura máxima para que la caja quede más compacta y panorámica -->
+        <div class="max-w-5xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-[200px_1fr] gap-6 md:gap-10 h-full max-h-[420px] min-h-0">
             
             <!-- LEFT COLUMN: Social Links + News Box -->
-            <div class="flex flex-col gap-5 w-full items-center md:items-start pt-2 h-full">
+            <div class="flex flex-col gap-4 w-full items-center md:items-start h-full min-h-0">
                 
                 <!-- Social Links -->
-                <div class="flex flex-row md:flex-col gap-4 md:gap-6 w-full justify-center md:justify-start md:pl-2 flex-shrink-0 flex-wrap">
+                <div class="flex flex-row md:flex-col gap-4 md:gap-5 w-full justify-center md:justify-start md:pl-2 flex-shrink-0 flex-wrap">
                     <a href="https://www.researchgate.net/profile/Diego-Diaz-Salamanca-2" target="_blank" class="flex items-center gap-2 md:gap-4 text-slate-800 hover:text-white transition-colors">
                         <i class="fab fa-researchgate text-2xl w-6 text-center"></i>
                         <span class="text-sm font-semibold hidden md:inline">ResearchGate</span>
@@ -141,13 +141,15 @@
                     </a>
                 </div>
 
-                <!-- SECCIÓN: NEWS! -->
-                <div class="w-full bg-white rounded-2xl shadow-lg border border-black flex flex-col flex-1 min-h-[200px] overflow-hidden md:mt-2">
+                <!-- NUEVA SECCIÓN: NEWS! -->
+                <!-- flex-1 y min-h-0 hace que la caja del News respete la altura y tenga scroll -->
+                <div class="w-full bg-white rounded-2xl shadow-lg border border-black flex flex-col flex-1 min-h-0 overflow-hidden md:mt-1">
                     <!-- Cabecera de News -->
-                    <div class="bg-slate-50 border-b border-slate-200 py-2.5 px-4 flex-shrink-0 flex items-center">
+                    <div class="bg-slate-50 border-b border-slate-200 py-2 px-4 flex-shrink-0 flex items-center">
                         <i class="fas fa-bullhorn text-[#5A85D7] mr-2 text-sm"></i>
                         <h3 class="text-sm font-bold text-slate-800 tracking-wide">News!</h3>
                     </div>
+                    
                     <!-- Contenedor scrollable de noticias -->
                     <div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
                         <!-- Noticia 1 -->
@@ -165,8 +167,8 @@
 
             </div>
 
-            <!-- RIGHT COLUMN: Dynamic Content Box (Hereda la altura fija de 520px) -->
-            <div class="relative w-full h-[450px] md:h-full">
+            <!-- RIGHT COLUMN: Dynamic Content Box -->
+            <div class="relative w-full h-[400px] md:h-full min-h-0">
                 
                 <!-- SECTION: ABOUT ME (Abierta por defecto) -->
                 <div id="content-about" class="absolute inset-0 flex flex-col bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-black z-10" style="display: flex;">
@@ -251,7 +253,7 @@
                             </ul>
                         </div>
 
-                        <!-- AÑO 2024 (Se quita el mb-8 extra para eliminar el doble hueco blanco al final del scroll) -->
+                        <!-- AÑO 2024 -->
                         <div>
                             <h3 class="text-xl font-bold text-black mb-4 border-l-4 border-[#5A85D7] pl-3">2024</h3>
                             <ul class="space-y-6">
@@ -329,8 +331,8 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-[#5A85D7] text-center py-4 text-sm text-slate-800 w-full border-t border-black/20 flex-shrink-0">
+    <!-- FOOTER (Asegurado su visibilidad) -->
+    <footer class="bg-[#5A85D7] text-center py-3 text-sm text-slate-800 w-full border-t border-black/20 flex-shrink-0">
         <p>&copy; 2026 Diego Díaz-Salamanca. All rights reserved.</p>
     </footer>
 
